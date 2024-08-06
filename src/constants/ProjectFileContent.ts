@@ -5,4 +5,5 @@ export enum ProjectFileContent {
   installReusablePropertyPaneControls = 'install-spfx-property-controls',
   installReusableReactControls = 'install-spfx-controls-react',
   installPnPJs = 'install-pnpjs',
+  createNodeVersionFile = 'create-node-version-file'
 }

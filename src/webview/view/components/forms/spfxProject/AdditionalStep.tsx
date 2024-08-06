@@ -13,6 +13,8 @@ interface AdditionalStepProps {
     setShouldInstallReusableReactControls: (value: boolean) => void;
     shouldInstallPnPJs: boolean;
     setShouldInstallPnPJs: (value: boolean) => void;
+    shouldCreateNodeVersionFile: boolean,
+    setShouldCreateNodeVersionFile: (value: boolean) => void;
 }
 
 export const AdditionalStep: React.FunctionComponent<AdditionalStepProps> = ({
@@ -23,7 +25,10 @@ export const AdditionalStep: React.FunctionComponent<AdditionalStepProps> = ({
     shouldInstallReusableReactControls,
     setShouldInstallReusableReactControls,
     shouldInstallPnPJs,
-    setShouldInstallPnPJs }: React.PropsWithChildren<AdditionalStepProps>) => {
+    setShouldInstallPnPJs,
+    shouldCreateNodeVersionFile,
+    setShouldCreateNodeVersionFile
+    }: React.PropsWithChildren<AdditionalStepProps>) => {
     return (
         <div className={'spfx__form__step'}>
             <StepHeader step={3} title='Additional steps' />
@@ -50,6 +55,11 @@ export const AdditionalStep: React.FunctionComponent<AdditionalStepProps> = ({
                     setValue={setShouldInstallPnPJs}
                     label='Install PnPjs (@pnp/sp, @pnp/graph)'
                     link='https://pnp.github.io/pnpjs/' />
+
+                <PackageSelector
+                    value={shouldCreateNodeVersionFile}
+                    setValue={setShouldCreateNodeVersionFile}
+                    label='Create Node version file' />
             </div>
         </div>
     );

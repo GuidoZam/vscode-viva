@@ -227,6 +227,10 @@ export class Scaffolder {
             content += ` ${ProjectFileContent.installPnPJs}`;
           }
 
+          if (newSolutionInput.shouldCreateNodeVersionFile) {
+            content += ` ${ProjectFileContent.createNodeVersionFile}`;
+          }
+
           Scaffolder.createProjectFileAndOpen(newFolderPath, content);
         } else {
           PnPWebview.close();

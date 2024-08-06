@@ -26,6 +26,7 @@ export const ScaffoldSpfxProjectView: React.FunctionComponent<IScaffoldSpfxProje
   const [shouldInstallReusablePropertyPaneControls, setShouldInstallReusablePropertyPaneControls] = useState<boolean>(false);
   const [shouldInstallReusableReactControls, setShouldInstallReusableReactControls] = useState<boolean>(false);
   const [shouldInstallPnPJs, setShouldInstallPnPJs] = useState<boolean>(false);
+  const [shouldCreateNodeVersionFile, setShouldCreateNodeVersionFile] = useState<boolean>(false);
   const location: any = useLocation();
 
   useEffect(() => {
@@ -78,7 +79,8 @@ export const ScaffoldSpfxProjectView: React.FunctionComponent<IScaffoldSpfxProje
         shouldRunInit,
         shouldInstallReusablePropertyPaneControls,
         shouldInstallReusableReactControls,
-        shouldInstallPnPJs
+        shouldInstallPnPJs,
+        shouldCreateNodeVersionFile
       } as SpfxScaffoldCommandInput);
     }
   };
@@ -123,6 +125,8 @@ export const ScaffoldSpfxProjectView: React.FunctionComponent<IScaffoldSpfxProje
             setShouldInstallReusableReactControls={setShouldInstallReusableReactControls}
             shouldInstallPnPJs={shouldInstallPnPJs}
             setShouldInstallPnPJs={setShouldInstallPnPJs}
+            shouldCreateNodeVersionFile={shouldCreateNodeVersionFile}
+            setShouldCreateNodeVersionFile={setShouldCreateNodeVersionFile}
           />
         }
       </div>
